@@ -10,7 +10,7 @@
             :news="news"
             :linkPath="linkPath"
             className="grid-cols-1"
-            stylingImage="max-h-[200px]"
+            stylingImage="h-[200px]"
           />
         </div>
       </div>

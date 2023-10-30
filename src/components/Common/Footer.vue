@@ -2,7 +2,7 @@
   <footer class="bg-slate-100/80">
     <CommonContainer>
       <div
-        class="pt-8 pb-4 grid grid-cols-[2fr_1fr_1fr_1fr] justify-between gap-4"
+        class="pt-16 pb-6 grid grid-cols-[2fr_1fr_1fr_1fr] justify-between gap-4"
       >
         <div>
           <NuxtLink

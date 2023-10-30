@@ -14,7 +14,7 @@
         <CommonNewsItem
           :news="news"
           className="grid-cols-1"
-          stylingImage="max-h-[150px]"
+          stylingImage="h-[140px]"
         />
       </div>
     </div>

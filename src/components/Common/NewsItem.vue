@@ -7,7 +7,7 @@
       <div
         :class="
           twMerge(
-            'max-w-full w-full rounded-md rounded-es-none rounded-ee-none overflow-hidden max-h-[100px] h-full group',
+            'max-w-full w-full rounded-md rounded-es-none rounded-ee-none overflow-hidden h-[100px] group',
             stylingImage
           )
         "

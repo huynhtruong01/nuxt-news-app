@@ -60,6 +60,16 @@ const { list } = await useListFetchApi<INews>(
 
 const relatedList = computed(() => list.value.slice(0, 8))
 
+useHead({
+  title: item.value?.title || "",
+  meta: [
+    {
+      name: "description",
+      content: item.value?.content || "",
+    },
+  ],
+})
+
 const description = ref(`Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Id cum nihil possimus perspiciatis autem
               laboriosam aperiam, animi praesentium neque quo. Possimus, ratione
