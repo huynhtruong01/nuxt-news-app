@@ -36,7 +36,7 @@
 import type { INews } from "../../models"
 import { twMerge } from "tailwind-merge"
 
-const { news, className, stylingImage, linkPath } = defineProps({
+defineProps({
   news: {
     type: Object as PropType<INews>,
     required: true,

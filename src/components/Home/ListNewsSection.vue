@@ -25,7 +25,7 @@
 import type { INews } from "../../models"
 import { twMerge } from "tailwind-merge"
 
-const { title, link, list, className } = defineProps({
+defineProps({
   title: {
     type: String,
     required: true,

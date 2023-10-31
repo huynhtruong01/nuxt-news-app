@@ -5,6 +5,7 @@ export interface INews {
   content: string
   urlImage: string
   author: string
+  category: string
   createdAt: Date
   updatedAt: Date
 }

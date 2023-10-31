@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import type { INews } from "../../models"
 
-const { title, linkPath, list } = defineProps({
+defineProps({
   title: {
     type: String,
     required: true,

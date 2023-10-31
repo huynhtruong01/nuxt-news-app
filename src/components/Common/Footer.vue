@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-slate-100/80">
+  <footer class="bg-slate-100/80 border-t border-slate-200">
     <CommonContainer>
       <div
         class="pt-16 pb-6 grid grid-cols-[2fr_1fr_1fr_1fr] justify-between gap-4"
@@ -22,9 +22,9 @@
           <ul class="flex gap-2 flex-col">
             <li v-for="item in category.items" :key="item">
               <a
-                href=""
+                href="/"
                 target="_blank"
-                class="capitalize font-normal text-sm"
+                class="capitalize font-normal text-sm text-slate-600 hover:text-slate-900 hover:underline"
                 >{{ item }}</a
               >
             </li>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <hr />
-      <p class="text-center pt-4 pb-6 text-slate-600">
+      <p class="text-center pt-4 pb-6 text-slate-700">
         Made and created by <span class="font-bold">Fake New company</span>
       </p>
     </CommonContainer>

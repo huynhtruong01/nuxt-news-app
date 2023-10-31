@@ -13,6 +13,7 @@
 
 <script setup lang="ts">
 import type { INews } from "../models"
+
 useHead({
   title: "Home",
 })

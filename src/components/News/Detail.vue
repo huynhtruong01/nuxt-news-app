@@ -26,10 +26,13 @@
       <hr />
       <div class="py-8">
         <h4 class="text-xl font-bold text-slate-900 mb-4">Related News</h4>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-4 gap-4" v-if="relatedList.length">
           <div v-for="news in relatedList" :key="news.id">
             <NewsItem :news="news" :linkPath="`/${path}`" />
           </div>
+        </div>
+        <div v-if="!relatedList.length" class="text-center py-4 text-slate-700">
+          No related {{ path }}
         </div>
       </div>
     </CommonContainer>
@@ -51,24 +54,33 @@ const { id } = defineProps({
 })
 
 const { item, pending } = await useDetailFetchApi<INews>(
-  `${import.meta.env.VITE_BASE_URL}/news/${id}`
+  `${import.meta.env.VITE_BASE_URL}/news/${id}`,
+  id
 )
 
 const { list } = await useListFetchApi<INews>(
   `${import.meta.env.VITE_BASE_URL}/news`
 )
 
-const relatedList = computed(() => list.value.slice(0, 8))
-
-useHead({
-  title: item.value?.title || "",
-  meta: [
-    {
-      name: "description",
-      content: item.value?.content || "",
-    },
-  ],
+const relatedList = computed(() => {
+  return item
+    ? list.value
+        .filter(
+          (i) => i.category === item.value?.category && i.id !== item.value.id
+        )
+        .slice(0, 8)
+    : []
 })
+
+if (item.value) {
+  useSeoMeta({
+    title: item.value.title || "",
+    ogTitle: item.value.title || "",
+    description: item.value.description || "",
+    ogDescription: item.value.description || "",
+    ogImage: item.value.urlImage || "",
+  })
+}
 
 const description = ref(`Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Id cum nihil possimus perspiciatis autem

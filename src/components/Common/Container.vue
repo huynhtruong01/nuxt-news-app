@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { twMerge } from "tailwind-merge"
 
-const { className } = defineProps({
+defineProps({
   className: {
     type: String,
     default: "",
